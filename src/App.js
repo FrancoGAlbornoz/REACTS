@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import {NavBar} from './componentes/NavBar/NavBar.js'
+import {ItemListContainer} from './componentes/ItemListContainer/ItemListContainer.js'
+
+
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reloadjeje.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          FrancoStark
-        </a>
-      </header>
+
+  return(
+    <div>
+
+      <NavBar/>
+      <ItemListContainer greeting="Bienvenidos a E-Tienda"/>
+
+
     </div>
-  );
+
+
+
+
+
+
+
+
+
+
+  ) 
+
+
+  
+  
 }
 
 export default App;
