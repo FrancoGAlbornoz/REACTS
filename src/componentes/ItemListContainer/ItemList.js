@@ -1,6 +1,7 @@
 import React from 'react'
+import {Item} from './Item'
 
-export const ItemList =({productos})=>{
+export const ItemList =({productos=[]})=>{
 
 	return(
 
@@ -9,16 +10,7 @@ export const ItemList =({productos})=>{
 			<hr/>
 			<div className="row">
 
-				{productos.map((prod)=>(
-					
-					<div key={prod.id} className="card col-4">
-							<h4>{prod.name}</h4>
-							<p>{prod.price}</p>
-							<p>{prod.descp}</p>
-					</div>
-
-
-					))}
+				{productos.map((prod) => <Item key={prod.id} {...prod}/> )}
 
 			</div>
 		</section>
