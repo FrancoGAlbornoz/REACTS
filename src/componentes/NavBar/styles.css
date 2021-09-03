@@ -13,3 +13,19 @@
 	color: white;
 
 }
+.container1{
+
+	display: grid;
+	grid-template-columns: 250px repeat(3, auto);
+	grid-template-rows: 300px 300px 300px;
+	grid-template-areas:
+	"prod1 prod1 prod1"
+	"prod1 prod1 prod1"
+	"prod1 prod1 prod1"; 
+
+}
+.product1{
+	grid-area:prod1;
+
+
+}

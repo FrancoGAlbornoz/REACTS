@@ -5,7 +5,7 @@ export const ItemList =({productos=[]})=>{
 
 	return(
 
-		<section className="container my-5">
+		<section className="container1">
 			<h2> Productos</h2>
 			<hr/>
 			<div className="row">

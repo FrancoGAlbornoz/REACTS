@@ -3,14 +3,21 @@ import {NavBar} from './componentes/NavBar/NavBar.js'
 import {ItemListContainer} from './componentes/ItemListContainer/ItemListContainer.js'
 import {BrowserRouter, Switch, Route, Redirect} from 'react-router-dom'
 import {ItemDetailContainer} from './componentes/ItemDetailContainer/ItemDetailContainer.js'
+import {InputEv} from './componentes/InputEv/InputEv.js'
 
 function App() {
+
+	
 
     return(
     	<>	
     	<BrowserRouter>
 
+
+
       		<NavBar/>
+
+      		
  
     		<Switch>
 
@@ -28,6 +35,10 @@ function App() {
 
     			<Route exact path="/contact">
     				<h1>Contactanos</h1>
+
+    				<h4>Nombre y apellido</h4>
+    				<h4>Email</h4>
+    				///<InputEv/>
     			</Route>
 
     			<Route exact path="/cart">
