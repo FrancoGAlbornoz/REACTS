@@ -2,7 +2,7 @@
 export const stock = [
 		{
 			id:1,
-			category: 'teclado',  	
+			category: 'teclados',  	
 			name:"Teclado RedDragon",
 			price: 7500,
 			descp:"Teclado Gamer RedDragon RGB",
@@ -51,7 +51,7 @@ export const stock = [
 		},
 		{
 			id:6,
-			category: 'teclado',  
+			category: 'teclados',  
 			name:"Teclado RedDragon Kumara",
 			price: 8000,
 			descp:"Teclado Mecanico color blanco RGB ",

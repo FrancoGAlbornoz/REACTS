@@ -1,8 +1,8 @@
 import React, {useContext, useEffect, useState} from 'react';
-import {pDatos} from '../../util/pDatos'
 import {ItemList} from './ItemList'
 import {useParams} from 'react-router-dom'
 import {UIContext} from '../../context/UIContext'
+import {getFirestore} from '../../firebase/config.js'
 
 export const ItemListContainer=()=>{
 
@@ -10,29 +10,40 @@ export const ItemListContainer=()=>{
 	const {catId}= useParams()
 
 	const [data, setData]=useState([])
-	
-
-
 
 	useEffect(()=>{
 		setLoading(true)
 
-		pDatos()
-			.then(res=>{
+		const db = getFirestore()
+		const products =db.collection('products')
 
-				if(catId){				
-					const aFiltro= res.filter (prod=> prod.category === catId)
-					setData( aFiltro )
-				}else{
-					setData(res)
-				}
 
+		if(catId){
+			const filtro =products.where('category','==', catId)
+			filtro.get()
+				.then((response)=>{
+					const data = response.docs.map((doc)=> ({...doc.data(),id: doc.id}))
+					console.log(data)
+					setData(data)
+				})
+				.finally(()=> {
+                    setLoading(false)
+                })
+		}
+		else{
+			products.get()
+			.then((response)=>{
+				const data = response.docs.map((doc)=> ({...doc.data(),id: doc.id}))
+				console.log(data)
+				setData(data)
 			})
-			.catch(err=>console.log(err))
 			.finally(()=>{
 				setLoading(false)
 			})
-	}, [catId])
+
+		}
+
+	}, [catId, setLoading])
 
 	return(
 		

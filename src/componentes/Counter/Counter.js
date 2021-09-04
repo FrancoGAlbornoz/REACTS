@@ -25,18 +25,19 @@ export const Counter =({ max,cant,setCant,agregar,agregado })=>{
 
 			<div className="botones">
 
-				{
-					agregado 
-						? <Link to="/cart" className="btn FinCompra">Terminar mi compra</Link>
-						:
-
+				
 					<div>
-						<button onClick={handleResta}>-</button>
+						<button onClick={handleResta} disabled={agregado}>-</button>
 						<p>{cant}</p>
-						<button onClick={handleSuma}>+</button>
-						<button className="btn addCart" onClick={agregar}> Agregar</button>
+						<button onClick={handleSuma} disabled={agregado}>+</button>
+						<button className="btn addCart"  onClick={agregar} disabled={agregado}> Agregar</button>
 					</div>
-				}
+					
+					
+					<Link to="/cart" >
+					<button disabled={!agregado} className=" btn FinCompra">Finalizar compra</button>
+					</Link>
+				
 
 			</div>
 			

@@ -23,11 +23,12 @@ export const ItemDetail =({id, category, name, price, descp, img, stock})=>{
 			<h4>Precio:{price}</h4>
 			<p>Detalle: {descp}</p>
 			<img src="{img}"/>
-			<Counter max ={stock}
-			 cant={cant} 
-			 setCant={setCant} 
-			 agregar={handleAdd}
-			 agregado={isInCart(id)}/>
+			<Counter 
+				max ={stock}
+			 	cant={cant} 
+			 	setCant={setCant} 
+			 	agregar={handleAdd}
+			 	agregado={isInCart(id)}/>
 		</div>
 
 	)

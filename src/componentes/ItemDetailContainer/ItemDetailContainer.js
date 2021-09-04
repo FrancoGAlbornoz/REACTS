@@ -3,6 +3,7 @@ import {useParams} from 'react-router-dom'
 import {ItemDetail} from './ItemDetail'
 import {pDatos} from '../../util/pDatos'
 import {UIContext} from '../../context/UIContext'
+import {getFirestore} from '../../firebase/config.js'
 
 
 export const ItemDetailContainer = () =>{
@@ -12,20 +13,31 @@ export const ItemDetailContainer = () =>{
 	const { itemId } = useParams()
 	const[item, setItem]= useState(null)
 	
-	console.log(itemId)
-	console.log(item)
+	
 
 	useEffect(()=>{
 		setLoading(true)
+
+		const db = getFirestore()
+		const products = db.collection('products')
+		const item =products.doc(itemId)
+
+		item.get()
+			.then((doc)=>{
+			console.log(doc.data())
+			setItem({...doc.data(), id:doc.id})
+			})
+			.finally(()=>{setLoading(false)})
+		/*setLoading(true)
 
 		pDatos()
 			.then(res =>{
 				setItem(res.find(prod =>prod.id===parseInt(itemId)))
 			})
-			.finally(()=>{setLoading(false)})
+			.finally(()=>{setLoading(false)})*/
 		
 
-	}, [itemId])
+	}, [itemId, setLoading])
 
 	return(
 
