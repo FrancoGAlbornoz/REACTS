@@ -1,7 +1,8 @@
 import React, {useState} from 'react'
 import './styles.css'
+import { Link } from 'react-router-dom'
 
-export const Counter =({ max,cant,setCant,agregar })=>{
+export const Counter =({ max,cant,setCant,agregar,agregado })=>{
 
 	
 
@@ -24,13 +25,22 @@ export const Counter =({ max,cant,setCant,agregar })=>{
 
 			<div className="botones">
 
-				<button onClick={handleResta}>-</button>
-				<p>{cant}</p>
-				<button onClick={handleSuma}>+</button>
+				{
+					agregado 
+						? <Link to="/cart" className="btn FinCompra">Terminar mi compra</Link>
+						:
+
+					<div>
+						<button onClick={handleResta}>-</button>
+						<p>{cant}</p>
+						<button onClick={handleSuma}>+</button>
+						<button className="btn addCart" onClick={agregar}> Agregar</button>
+					</div>
+				}
 
 			</div>
-			<button className="btn addCart" onClick={agregar}> Agregar</button>
-
+			
+			
 		</>
 
 	)

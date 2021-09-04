@@ -1,6 +1,6 @@
-
 import './styles.css'
 import {Link} from 'react-router-dom'
+import {CartWidget} from '../CartWidget/CartWidget.js'
 
 export const NavBar =()=>{
 
@@ -18,7 +18,7 @@ export const NavBar =()=>{
 				<Link className="navg5" to ={"/category/mouse"}>Mouse</Link>
 				<Link className="navg6" to ={"/category/microfono"}>Mic</Link>
 			</nav>	
-
+			<CartWidget/>
 		</header>	
 
 
