@@ -3,12 +3,10 @@ import {NavBar} from './componentes/NavBar/NavBar.js'
 import {ItemListContainer} from './componentes/ItemListContainer/ItemListContainer.js'
 import {BrowserRouter, Switch, Route, Redirect} from 'react-router-dom'
 import {ItemDetailContainer} from './componentes/ItemDetailContainer/ItemDetailContainer.js'
-import {InputEv} from './componentes/InputEv/InputEv.js'
 import {CartProvider} from './context/CartContext.js'
-import {useState} from 'react'
-import {CartWidget} from './componentes/CartWidget/CartWidget.js'
 import {CartScreen} from './componentes/CartScreen/CartScreen'
 import {UIContextProvider} from './context/UIContext'
+import {Checkout} from "./componentes/Checkout/Checkout.js"
 
 function App() {
 
@@ -32,16 +30,17 @@ function App() {
     					</Route>
 
     					<Route exact path="/contact">
-    						<h1>Contactanos</h1>
-
-    						<h4>Nombre y apellido</h4>
-    						<h4>Email</h4>
-    					///<InputEv/>
+    						<h1>Contactanos</h1>    					
     					</Route>
 
     					<Route exact path="/cart">
     						<CartScreen/>
     					</Route>
+
+                        <Route exact path="/checkout">
+                            <Checkout/>
+                        </Route>
+
 
     					<Route exact path="*">
     						<h1>ERROR404</h1>

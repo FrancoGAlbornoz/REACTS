@@ -28,7 +28,8 @@ export const ItemDetail =({id, category, name, price, descp, img, stock})=>{
 			 	cant={cant} 
 			 	setCant={setCant} 
 			 	agregar={handleAdd}
-			 	agregado={isInCart(id)}/>
+			 	agregado={isInCart(id)}
+			/>
 		</div>
 
 	)

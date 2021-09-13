@@ -1,7 +1,6 @@
 import React, {useContext, useEffect, useState} from 'react'
 import {useParams} from 'react-router-dom'
 import {ItemDetail} from './ItemDetail'
-import {pDatos} from '../../util/pDatos'
 import {UIContext} from '../../context/UIContext'
 import {getFirestore} from '../../firebase/config.js'
 
@@ -28,13 +27,6 @@ export const ItemDetailContainer = () =>{
 			setItem({...doc.data(), id:doc.id})
 			})
 			.finally(()=>{setLoading(false)})
-		/*setLoading(true)
-
-		pDatos()
-			.then(res =>{
-				setItem(res.find(prod =>prod.id===parseInt(itemId)))
-			})
-			.finally(()=>{setLoading(false)})*/
 		
 
 	}, [itemId, setLoading])

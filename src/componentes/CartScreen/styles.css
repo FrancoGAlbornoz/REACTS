@@ -1,14 +1,20 @@
 .btn {
-  border: 2px solid black;
-  background-color: white;
-  color: black;
-  padding: 14px 28px;
-  font-size: 16px;
-  cursor: pointer;
+  	border: 2px solid black;
+  	background-color: white;
+  	color: black;
+  	padding: 14px 28px;
+  	font-size: 16px;
+  	cursor: pointer;
 }
 
 
 .Vaciar {
-  border-color: #6495ed;
-  color: black;
+  	border-color: #6495ed;
+  	color: black;
+}
+.FinCompra1{
+	border-color: #6495ed;
+  	color: black;
+  	background-color: red;
+  	margin-top: 250px;
 }

@@ -2,6 +2,7 @@ import React, {useContext} from 'react'
 import {CartContext} from '../../context/CartContext.js'
 import {BsFillTrashFill} from 'react-icons/bs'
 import './styles.css'
+import { Link } from 'react-router-dom'
 
 
 export const CartScreen = () =>{
@@ -23,6 +24,11 @@ export const CartScreen = () =>{
 			<hr/>
 
 			<button className="btn Vaciar" onClick={vaciarCarrito} >Vaciar</button>
+			<Link to="/checkout">
+			   	<button className=" bnt FinCompra1">
+                    Finalizar mi compra
+                </button>
+            </Link>
 		</div>	
 	)
 }
